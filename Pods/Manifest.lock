@@ -1,0 +1,12 @@
+PODS:
+  - ZXingObjC (3.0.3):
+    - ZXingObjC/All (= 3.0.3)
+  - ZXingObjC/All (3.0.3)
+
+DEPENDENCIES:
+  - ZXingObjC (~> 3.0)
+
+SPEC CHECKSUMS:
+  ZXingObjC: 1eebdf4334b7de660ae42ddd23bd97b6d777b07d
+
+COCOAPODS: 0.35.0
