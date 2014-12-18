@@ -184,7 +184,7 @@ NSString *distUrl;
       [array addObject:distUrl];
       NSMutableDictionary *newDictionary = [NSMutableDictionary dictionary];
       [newDictionary setObject:array forKey:dateString];
-      [list replaceObjectAtIndex:2 withObject:newDictionary];
+      [list replaceObjectAtIndex:list.count - 1 withObject:newDictionary];
       NSLog(@"%@", list);
       [userDefaults setObject:list forKey:@"list"];
     } else {
