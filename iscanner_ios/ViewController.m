@@ -42,29 +42,48 @@ NSString *distUrl;
 }
 
 - (void)setBackground {
-  UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(80, 100, 48, 48)];
-  imageView1.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"qrcode.png"]];
-  imageView1.layer.masksToBounds = YES;
-  imageView1.layer.cornerRadius = 5.0f;
-  [self.view addSubview:imageView1];
-  UITextView *text1 = [[UITextView alloc] initWithFrame:CGRectMake(80, 140, 48, 30)];
-  text1.text = @"qrcode";
-  text1.backgroundColor = [UIColor clearColor];
-  text1.alpha = 0.3;
-  text1.textColor = [UIColor whiteColor];
-  [self.view addSubview:text1];
-  UIImageView *imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 120, 100, 48, 48)];
-  imageView2.layer.masksToBounds = YES;
-  imageView2.layer.cornerRadius = 5.0f;
-  imageView2.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"barcode.png"]];
-  [self.view addSubview:imageView2];
-  UITextView *text2 = [[UITextView alloc] initWithFrame:CGRectMake(self.view.frame.size.width - 124, 140, 54, 30)];
-  text2.text = @"barcode";
-  text2.backgroundColor = [UIColor clearColor];
-  text2.alpha = 0.3;
-  text2.textColor = [UIColor whiteColor];
-  [self.view addSubview:text2];
+  float length = 20.0;
+  float width = 80.0;
+  float total = length + width;
+  UIImageView *canvasView = [[UIImageView alloc]initWithFrame:CGRectMake((self.view.frame.size.width - total) / 2, (self.view.frame.size.width - total) / 2 + 100, total, total)];
+  [self.view addSubview:canvasView];
+  UIGraphicsBeginImageContext(canvasView.frame.size);
+  [canvasView.image drawInRect:CGRectMake(0, 0, canvasView.frame.size.width, canvasView.frame.size.height)];
+  CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+  CGContextRef line = UIGraphicsGetCurrentContext();
+  CGContextSetStrokeColorWithColor(line, [UIColor blackColor].CGColor);
+  CGContextSetAlpha(line, 0.5);
+
+  CGContextMoveToPoint(line, 0.0, 0.0);
+  CGContextAddLineToPoint(line, length, 0.0);
+  CGContextMoveToPoint(line, 0.0, 0.0);
+  CGContextAddLineToPoint(line, 0.0, length);
+
+  CGContextMoveToPoint(line, width, 0.0);
+  CGContextAddLineToPoint(line, total, 0.0);
+  CGContextMoveToPoint(line, total, 0.0);
+  CGContextAddLineToPoint(line, total, length);
+
+  CGContextMoveToPoint(line, 0.0, total);
+  CGContextAddLineToPoint(line, length, total);
+  CGContextMoveToPoint(line, 0.0, width);
+  CGContextAddLineToPoint(line, 0.0, total);
+  
+  CGContextMoveToPoint(line, width, total);
+  CGContextAddLineToPoint(line, total, total);
+  CGContextMoveToPoint(line, total, width);
+  CGContextAddLineToPoint(line, total, total);
+
+  CGContextStrokePath(line);
+  CGContextSetStrokeColorWithColor(line, [UIColor redColor].CGColor);
+  CGContextSetAlpha(line, 0.5);
+  CGContextMoveToPoint(line, 0.0, total / 2);
+  CGContextAddLineToPoint(line, total, total / 2);
+
+  CGContextStrokePath(line);
+  canvasView.image = UIGraphicsGetImageFromCurrentImageContext();
 }
+
 - (void)setNavigationBar {
   self.navigationItem.title = @"iScanner";
   UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"History" style:UIBarButtonItemStylePlain target:self action:@selector(gotoHistory)];
