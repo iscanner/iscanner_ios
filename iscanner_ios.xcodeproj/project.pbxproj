@@ -203,6 +203,7 @@
 				TargetAttributes = {
 					639EA1D61A425A4C001069FC = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = BCFUQV9MPB;
 					};
 					639EA1EF1A425A4C001069FC = {
 						CreatedOnToolsVersion = 6.1;
