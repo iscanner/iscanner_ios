@@ -17,10 +17,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  [self setAbout];
+  [self initView];
 }
 
-- (void)setAbout {
+- (void)initView {
   UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 220) / 2, 100, 220, 220)];
   imageView1.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"icon.png"]];
   imageView1.alpha = 0.1;
@@ -36,7 +36,6 @@
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
 }
 
 @end

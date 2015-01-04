@@ -12,33 +12,36 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
+@property (nonatomic, strong) ZXCapture *capture;
+@property (nonatomic) BOOL startScan;
+@property (nonatomic, strong) NSString *distUrl;
 @end
 
 @implementation ViewController
 
-ZXCapture *capture;
-BOOL startScan;
-NSString *distUrl;
-
 - (void)viewDidLoad {
   [super viewDidLoad];
+  [self initView];
+}
+
+- (void)initView {
   [self setNavigationBar];
   [self setCopyRight];
   [self setCapture];
 }
 
 - (void)setCapture {
-  capture = nil;
-  capture = [[ZXCapture alloc] init];
-  capture.camera = capture.back;
-  capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
-  capture.rotation = 90.0f;
-  capture.layer.cornerRadius = 5.0f;
+  self.capture = nil;
+  self.capture = [[ZXCapture alloc] init];
+  self.capture.camera = self.capture.back;
+  self.capture.focusMode = AVCaptureFocusModeContinuousAutoFocus;
+  self.capture.rotation = 90.0f;
+  self.capture.layer.cornerRadius = 5.0f;
   CGRect frame = CGRectMake(20, 80, self.view.frame.size.width - 40, self.view.frame.size.width + 40);
-  capture.layer.frame = frame;
-  [self.view.layer addSublayer:capture.layer];
+  self.capture.layer.frame = frame;
+  [self.view.layer addSublayer: self.capture.layer];
   [self setBackground];
-  startScan = YES;
+  self.startScan = YES;
 }
 
 - (void)setBackground {
@@ -120,7 +123,7 @@ NSString *distUrl;
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
-  capture.delegate = self;
+  self.capture.delegate = self;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -169,12 +172,12 @@ NSString *distUrl;
 
 
 - (void)captureResult:(ZXCapture *)capture result:(ZXResult *)result {
-  if (!self.view.window || !startScan || !result) return;
+  if (!self.view.window || !self.startScan || !result) return;
   
   NSString *formatString = [self barcodeFormatToString:result.barcodeFormat];
   AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-  startScan = NO;
-  distUrl = result.text;
+  self.startScan = NO;
+  self.distUrl = result.text;
   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:formatString message:result.text delegate:self cancelButtonTitle:@"continue" otherButtonTitles:@"ok", nil];
   [alert show];
 }
@@ -182,9 +185,9 @@ NSString *distUrl;
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
   if (buttonIndex == 1) {
     [self saveNSUserDefaults];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:distUrl]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: self.distUrl]];
   }
-  startScan = YES;
+  self.startScan = YES;
 }
 
 - (void)saveNSUserDefaults {
@@ -200,7 +203,7 @@ NSString *distUrl;
     NSString *tempKey = [tempArray objectAtIndex:0];
     if([tempKey isEqualToString:dateString]) {
       NSMutableArray *array = [[dictionary objectForKey:tempKey] mutableCopy];
-      [array addObject:distUrl];
+      [array addObject: self.distUrl];
       NSMutableDictionary *newDictionary = [NSMutableDictionary dictionary];
       [newDictionary setObject:array forKey:dateString];
       [list replaceObjectAtIndex:list.count - 1 withObject:newDictionary];
@@ -211,7 +214,7 @@ NSString *distUrl;
         [list removeObjectAtIndex:0];
       }
       NSMutableArray *childlist = [[NSMutableArray alloc] init];
-      [childlist addObject:distUrl];
+      [childlist addObject: self.distUrl];
       NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
       [dictionary setObject:childlist forKey:dateString];
       [list addObject:dictionary];
@@ -220,7 +223,7 @@ NSString *distUrl;
   } else {
     NSMutableArray *list = [[NSMutableArray alloc] init];
     NSMutableArray *childlist = [[NSMutableArray alloc] init];
-    [childlist addObject:distUrl];
+    [childlist addObject: self.distUrl];
     NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
     [dictionary setObject:childlist forKey:dateString];
     [list addObject:dictionary];

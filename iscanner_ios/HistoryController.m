@@ -9,27 +9,25 @@
 #import "HistoryController.h"
 
 @interface HistoryController ()
-
+@property (nonatomic, strong) NSMutableArray *list;
 @end
 
 @implementation HistoryController
 
-NSMutableArray *list;
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self readNSUserDefaults];
-  [self setTable];
+  [self initView];
 }
 
 -(void)readNSUserDefaults {
   NSUserDefaults *userDefaultes = [NSUserDefaults standardUserDefaults];
-  list = [userDefaultes objectForKey:@"list"];
-  list = (NSMutableArray *)[[list reverseObjectEnumerator] allObjects];
+  self.list = [userDefaultes objectForKey:@"list"];
+  self.list = (NSMutableArray *)[[self.list reverseObjectEnumerator] allObjects];
 }
 
-- (void)setTable {
-  if (!list) return;
+- (void)initView {
+  if (!self.list) return;
   UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) style:UITableViewStyleGrouped];
   tableView.backgroundColor = [UIColor whiteColor];
   [self.view addSubview:tableView];
@@ -37,13 +35,12 @@ NSMutableArray *list;
   tableView.dataSource = self;
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  NSMutableDictionary *dictionary = [list objectAtIndex:indexPath.section];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  NSMutableDictionary *dictionary = [self.list objectAtIndex:indexPath.section];
   NSArray *tempArray = [dictionary allKeys];
   NSString *tempKey = [tempArray objectAtIndex:0];
   NSMutableArray *array = [dictionary objectForKey:tempKey];
@@ -51,15 +48,15 @@ NSMutableArray *list;
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[array objectAtIndex:indexPath.row]]];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-  return list.count;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+  return self.list.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  long int count = [list count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  long int count = [self.list count];
   for (int i = 0 ; i < count; i++) {
     if (section == i) {
-      NSMutableDictionary *dictionary = [list objectAtIndex:i];
+      NSMutableDictionary *dictionary = [self.list objectAtIndex:i];
       NSArray *tempArray = [dictionary allKeys];
       NSString *tempKey = [tempArray objectAtIndex:0];
       NSMutableArray *array = [dictionary objectForKey:tempKey];
@@ -69,12 +66,12 @@ NSMutableArray *list;
   return 1;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   UITableViewCell *cell = [[UITableViewCell alloc] init];
-  long int count = [list count];
+  long int count = [self.list count];
   for (int i = 0 ; i < count; i++) {
     if (indexPath.section == i) {
-      NSMutableDictionary *dictionary = [list objectAtIndex:i];
+      NSMutableDictionary *dictionary = [self.list objectAtIndex:i];
       NSArray *tempArray = [dictionary allKeys];
       NSString *tempKey = [tempArray objectAtIndex:0];
       NSMutableArray *array = [dictionary objectForKey:tempKey];
@@ -90,9 +87,8 @@ NSMutableArray *list;
   return cell;
 }
 
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-  NSDictionary *d = [list objectAtIndex: section];
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+  NSDictionary *d = [self.list objectAtIndex: section];
   NSArray *tempArray = [d allKeys];
   NSString *tempKey = [tempArray objectAtIndex:0];
   return tempKey;
