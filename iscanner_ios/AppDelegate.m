@@ -19,6 +19,7 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
   UINavigationController *nav = [[UINavigationController alloc]init];
+  nav.interactivePopGestureRecognizer.enabled = NO;
   self.window.rootViewController = nav;
   ViewController *controller = [[ViewController  alloc] init];
   [nav pushViewController:controller animated:NO];

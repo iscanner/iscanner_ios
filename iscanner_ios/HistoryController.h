@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface HistoryController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-  NSArray* tableData;
-}
+#import <ZXingObjC/ZXingObjC.h>
+@interface HistoryController : UITableViewController
 @end

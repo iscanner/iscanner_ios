@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		639635991A60FB6E00039573 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 639635981A60FB6E00039573 /* SwipeableCell.m */; };
 		639EA1DD1A425A4C001069FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1DC1A425A4C001069FC /* main.m */; };
 		639EA1E01A425A4C001069FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1DF1A425A4C001069FC /* AppDelegate.m */; };
 		639EA1E31A425A4C001069FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1E21A425A4C001069FC /* ViewController.m */; };
@@ -30,6 +31,8 @@
 
 /* Begin PBXFileReference section */
 		19796A9EE5D4E319DD14DC9F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		639635971A60FB6E00039573 /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
+		639635981A60FB6E00039573 /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; tabWidth = 2; };
 		639EA1D71A425A4C001069FC /* iScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639EA1DB1A425A4C001069FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639EA1DC1A425A4C001069FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 		639EA1D91A425A4C001069FC /* iscanner_ios */ = {
 			isa = PBXGroup;
 			children = (
+				639635971A60FB6E00039573 /* SwipeableCell.h */,
+				639635981A60FB6E00039573 /* SwipeableCell.m */,
 				639EA1DE1A425A4C001069FC /* AppDelegate.h */,
 				639EA1DF1A425A4C001069FC /* AppDelegate.m */,
 				639EA1E11A425A4C001069FC /* ViewController.h */,
@@ -292,6 +297,7 @@
 				639EA1E01A425A4C001069FC /* AppDelegate.m in Sources */,
 				639EA1DD1A425A4C001069FC /* main.m in Sources */,
 				639EA2021A425C6F001069FC /* AboutController.m in Sources */,
+				639635991A60FB6E00039573 /* SwipeableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
