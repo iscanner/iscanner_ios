@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		639635991A60FB6E00039573 /* SwipeableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 639635981A60FB6E00039573 /* SwipeableCell.m */; };
+		6396359D1A6121D400039573 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6396359C1A6121D400039573 /* Images.xcassets */; };
 		639EA1DD1A425A4C001069FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1DC1A425A4C001069FC /* main.m */; };
 		639EA1E01A425A4C001069FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1DF1A425A4C001069FC /* AppDelegate.m */; };
 		639EA1E31A425A4C001069FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1E21A425A4C001069FC /* ViewController.m */; };
 		639EA1E61A425A4C001069FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 639EA1E41A425A4C001069FC /* Main.storyboard */; };
-		639EA1E81A425A4C001069FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 639EA1E71A425A4C001069FC /* Images.xcassets */; };
 		639EA1F71A425A4C001069FC /* iscanner_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA1F61A425A4C001069FC /* iscanner_iosTests.m */; };
 		639EA2021A425C6F001069FC /* AboutController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA2011A425C6F001069FC /* AboutController.m */; };
 		639EA2061A425CF8001069FC /* HistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 639EA2051A425CF8001069FC /* HistoryController.m */; };
@@ -33,6 +33,7 @@
 		19796A9EE5D4E319DD14DC9F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		639635971A60FB6E00039573 /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
 		639635981A60FB6E00039573 /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; tabWidth = 2; };
+		6396359C1A6121D400039573 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		639EA1D71A425A4C001069FC /* iScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639EA1DB1A425A4C001069FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639EA1DC1A425A4C001069FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		639EA1E11A425A4C001069FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		639EA1E21A425A4C001069FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		639EA1E51A425A4C001069FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		639EA1E71A425A4C001069FC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		639EA1F01A425A4C001069FC /* iscanner_iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iscanner_iosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		639EA1F51A425A4C001069FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639EA1F61A425A4C001069FC /* iscanner_iosTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iscanner_iosTests.m; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 		639EA1D91A425A4C001069FC /* iscanner_ios */ = {
 			isa = PBXGroup;
 			children = (
+				6396359C1A6121D400039573 /* Images.xcassets */,
 				639635971A60FB6E00039573 /* SwipeableCell.h */,
 				639635981A60FB6E00039573 /* SwipeableCell.m */,
 				639EA1DE1A425A4C001069FC /* AppDelegate.h */,
@@ -102,7 +103,6 @@
 				639EA1E11A425A4C001069FC /* ViewController.h */,
 				639EA1E21A425A4C001069FC /* ViewController.m */,
 				639EA1E41A425A4C001069FC /* Main.storyboard */,
-				639EA1E71A425A4C001069FC /* Images.xcassets */,
 				639EA1DA1A425A4C001069FC /* Supporting Files */,
 				639EA2001A425C60001069FC /* AboutController.h */,
 				639EA2011A425C6F001069FC /* AboutController.m */,
@@ -241,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				639EA1E61A425A4C001069FC /* Main.storyboard in Resources */,
-				639EA1E81A425A4C001069FC /* Images.xcassets in Resources */,
+				6396359D1A6121D400039573 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

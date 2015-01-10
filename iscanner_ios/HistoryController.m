@@ -123,7 +123,13 @@ static NSString * const cellIdentifier = @"swipetablecell";
 }
 
 - (UIImage *)swipeableCell:(SwipeableCell *)cell imageForButtonAtIndex:(NSInteger)index {
-  return [UIImage imageNamed:@"user"];
+  NSString *res;
+  if (index == 0) {
+    res = @"copy";
+  } else {
+    res = @"qrcode";
+  }
+  return [UIImage imageNamed: res];
 }
 
 - (UIColor *)swipeableCell:(SwipeableCell *)cell backgroundColorForButtonAtIndex:(NSInteger)index {
