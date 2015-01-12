@@ -65,18 +65,6 @@
     }
 }
 
-- (void)prepareForReuse {
-    [super prepareForReuse];
-    
-    [self resetConstraintContstantsToZero:NO notifyDelegateDidClose:NO];
-    
-    for (UIButton *button in self.buttons) {
-        [button removeFromSuperview];
-    }
-    [self.buttons removeAllObjects];
-    
-}
-
 - (void)configureButtons {
     CGFloat previousMinX = CGRectGetWidth(self.frame);
     NSInteger buttons = [self.dataSource numberOfButtonsInSwipeableCell:self];
@@ -141,7 +129,7 @@
             button.backgroundColor = [self.dataSource swipeableCell:self  backgroundColorForButtonAtIndex:index];
         } else {
             if (index == 0) {
-                button.backgroundColor = [UIColor redColor];
+                button.backgroundColor = [UIColor lightGrayColor];
             } else {
                 button.backgroundColor = [UIColor lightGrayColor];
             }
@@ -177,7 +165,6 @@
     for (UIButton *button in self.buttons) {
         buttonWidth += CGRectGetWidth(button.frame);
     }
-    
     return buttonWidth;
 }
 
@@ -273,17 +260,17 @@
                 }
                 
                 CGFloat adjustment = self.startingRightLayoutConstraintConstant - deltaX;
-                if (!panningLeft) {
-                    CGFloat constant = MAX(adjustment, 0);
-                    if (constant == 0) {
-                        [self resetConstraintContstantsToZero:YES notifyDelegateDidClose:NO];
+                if (panningLeft) {
+                    CGFloat constant = MIN(adjustment, [self buttonTotalWidth]);
+                    if (constant == [self buttonTotalWidth]) {
+                        [self setConstraintsToShowAllButtons:YES notifyDelegateDidOpen:NO];
                     } else {
                         self.contentViewRightConstraint.constant = constant;
                     }
                 } else {
-                    CGFloat constant = MIN(adjustment, [self buttonTotalWidth]);
-                    if (constant == [self buttonTotalWidth]) {
-                        [self setConstraintsToShowAllButtons:YES notifyDelegateDidOpen:NO];
+                    CGFloat constant = MAX(adjustment, 0);
+                    if (constant == 0) {
+                        [self resetConstraintContstantsToZero:YES notifyDelegateDidClose:NO];
                     } else {
                         self.contentViewRightConstraint.constant = constant;
                     }

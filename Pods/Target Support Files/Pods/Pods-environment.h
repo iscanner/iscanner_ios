@@ -6,6 +6,12 @@
 // project.
 
 
+// Toast
+#define COCOAPODS_POD_AVAILABLE_Toast
+#define COCOAPODS_VERSION_MAJOR_Toast 2
+#define COCOAPODS_VERSION_MINOR_Toast 4
+#define COCOAPODS_VERSION_PATCH_Toast 0
+
 // ZXingObjC
 #define COCOAPODS_POD_AVAILABLE_ZXingObjC
 #define COCOAPODS_VERSION_MAJOR_ZXingObjC 3

@@ -8,6 +8,7 @@
 
 #import "HistoryController.h"
 #import "SwipeableCell.h"
+#import "UIView+Toast.h"
 
 @interface HistoryController () <SwipeableCellDelegate, SwipeableCellDataSource, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *list;
@@ -155,10 +156,11 @@ static NSString * const cellIdentifier = @"swipetablecell";
 }
 
 - (void)copyToClipboard:(NSString*)string {
+  [self.view makeToast:@"Copy to clipboard"
+              duration:1.0
+              position:CSToastPositionCenter];
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = string;
-  UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"" message:@"Copy to clipboard" delegate:nil cancelButtonTitle:@"I got it" otherButtonTitles:nil];
-  [alter show];
 }
 
 - (void)createQrcode:(NSString*)string {
@@ -186,7 +188,12 @@ static NSString * const cellIdentifier = @"swipetablecell";
     [self.maskView addGestureRecognizer:singleTap];
     singleTap.delegate = self;
     singleTap.cancelsTouchesInView = NO;
+    self.maskView.alpha = 0;
     [self.view addSubview: self.maskView];
+    [UIView animateWithDuration: .5 animations:^{
+      self.maskView.alpha = 1;
+    } completion:^(BOOL finished) {
+    }];
   } else {
     NSString *errorMessage = [error localizedDescription];
     NSLog(@"%@", errorMessage);
@@ -195,7 +202,11 @@ static NSString * const cellIdentifier = @"swipetablecell";
 
 -(void)onTapHandle:(UITapGestureRecognizer *)sender{
   self.navigationController.navigationBar.hidden = NO;
-  [self.maskView removeFromSuperview];
+  [UIView animateWithDuration: .5 animations:^{
+    self.maskView.alpha = 0;
+  } completion:^(BOOL finished) {
+    [self.maskView removeFromSuperview];
+  }];
 }
 
 - (void)swipeableCellDidOpen:(SwipeableCell *)cell {

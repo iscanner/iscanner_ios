@@ -21,13 +21,15 @@
 }
 
 - (void)initView {
+  NSString *versionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
   UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 220) / 2, 100, 220, 220)];
   imageView1.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"icon.png"]];
   imageView1.alpha = 0.1;
   imageView1.layer.masksToBounds = YES;
   [self.view addSubview:imageView1];
   UITextView *text1 = [[UITextView alloc] initWithFrame:CGRectMake(0, 400, self.view.frame.size.width, 100)];
-  text1.text = @"iScanner v1.0\nby xdf";
+  text1.backgroundColor = [UIColor clearColor];
+  text1.text = [NSString stringWithFormat:@"%@%@%@",@"iScanner v", versionString, @"\nby xdf"];
   text1.font = [UIFont systemFontOfSize: 20.0];
   text1.textAlignment = NSTextAlignmentCenter;
   text1.textColor = [UIColor grayColor];

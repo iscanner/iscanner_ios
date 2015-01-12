@@ -1,12 +1,15 @@
 PODS:
+  - Toast (2.4)
   - ZXingObjC (3.0.3):
     - ZXingObjC/All (= 3.0.3)
   - ZXingObjC/All (3.0.3)
 
 DEPENDENCIES:
+  - Toast (~> 2.4)
   - ZXingObjC (~> 3.0)
 
 SPEC CHECKSUMS:
+  Toast: 6a3c2b1d70e426b26d130971c369670eac7aa9ce
   ZXingObjC: 1eebdf4334b7de660ae42ddd23bd97b6d777b07d
 
 COCOAPODS: 0.35.0
