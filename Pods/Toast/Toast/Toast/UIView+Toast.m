@@ -22,7 +22,7 @@ static const CGFloat CSToastHorizontalPadding   = 10.0;
 static const CGFloat CSToastVerticalPadding     = 10.0;
 static const CGFloat CSToastCornerRadius        = 10.0;
 static const CGFloat CSToastOpacity             = 0.8;
-static const CGFloat CSToastFontSize            = 16.0;
+static const CGFloat CSToastFontSize            = 14.0;
 static const CGFloat CSToastMaxTitleLines       = 0;
 static const CGFloat CSToastMaxMessageLines     = 0;
 static const NSTimeInterval CSToastFadeDuration = 0.2;
@@ -30,7 +30,7 @@ static const NSTimeInterval CSToastFadeDuration = 0.2;
 // shadow appearance
 static const CGFloat CSToastShadowOpacity       = 0.8;
 static const CGFloat CSToastShadowRadius        = 6.0;
-static const CGSize  CSToastShadowOffset        = { 4.0, 4.0 };
+static const CGSize  CSToastShadowOffset        = { 2.0, 2.0 };
 static const BOOL    CSToastDisplayShadow       = YES;
 
 // display duration

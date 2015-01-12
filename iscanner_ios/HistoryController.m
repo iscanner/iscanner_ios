@@ -156,9 +156,9 @@ static NSString * const cellIdentifier = @"swipetablecell";
 }
 
 - (void)copyToClipboard:(NSString*)string {
-  [self.view makeToast:@"Copy to clipboard"
-              duration:1.0
-              position:CSToastPositionCenter];
+  [self.tableView.superview makeToast: @"Copy to clipboard"
+              duration: 1.0
+              position: CSToastPositionCenter];
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = string;
 }
