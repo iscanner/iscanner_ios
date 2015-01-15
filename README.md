@@ -4,11 +4,11 @@ iScanner
 An easy-to-use scanner app for iOS.
 
 ---
-<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/launch.png" width="50%"/>
-<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/scan.png" width="50%"/>
-<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/history.png" width="50%"/>
-<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/copy.png" width="50%"/>
-<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/create.png" width="50%"/>
+
+## Installation
+
+Installation instructions are [on the homepage](http://iscanner.github.io/).
+
 ## Features
 - fast simple and exact
 - support multiple 2D codes
@@ -18,7 +18,15 @@ An easy-to-use scanner app for iOS.
 - store last three days items in the local
 - completely open source under MIT agreement
 
-Thanks to: 
+## Screenshot
+
+<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/launch.png" width="50%"/>
+<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/scan.png" width="50%"/>
+<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/history.png" width="50%"/>
+<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/copy.png" width="50%"/>
+<img src="https://raw.githubusercontent.com/iscanner/iscanner_ios/master/screenshot/create.png" width="50%"/>
+
+Thanks to:
 
 - [ZXingObjC](https://github.com/TheLevelUp/ZXingObjC)
 - [iscanner_android](https://github.com/iscanner/iscanner_android)
