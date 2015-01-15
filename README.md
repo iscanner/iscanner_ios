@@ -3,8 +3,6 @@ iScanner
 
 An easy-to-use scanner app for iOS.
 
----
-
 ## Installation
 
 Installation instructions are [on the homepage](http://iscanner.github.io/).
