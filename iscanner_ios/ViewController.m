@@ -56,17 +56,17 @@
   CGContextRef line = UIGraphicsGetCurrentContext();
   CGContextSetStrokeColorWithColor(line, [UIColor blackColor].CGColor);
   CGContextSetAlpha(line, 0.5);
-
+  
   CGContextMoveToPoint(line, 0.0, 0.0);
   CGContextAddLineToPoint(line, length, 0.0);
   CGContextMoveToPoint(line, 0.0, 0.0);
   CGContextAddLineToPoint(line, 0.0, length);
-
+  
   CGContextMoveToPoint(line, width, 0.0);
   CGContextAddLineToPoint(line, total, 0.0);
   CGContextMoveToPoint(line, total, 0.0);
   CGContextAddLineToPoint(line, total, length);
-
+  
   CGContextMoveToPoint(line, 0.0, total);
   CGContextAddLineToPoint(line, length, total);
   CGContextMoveToPoint(line, 0.0, width);
@@ -76,13 +76,13 @@
   CGContextAddLineToPoint(line, total, total);
   CGContextMoveToPoint(line, total, width);
   CGContextAddLineToPoint(line, total, total);
-
+  
   CGContextStrokePath(line);
   CGContextSetStrokeColorWithColor(line, [UIColor redColor].CGColor);
   CGContextSetAlpha(line, 0.5);
   CGContextMoveToPoint(line, 0.0, total / 2);
   CGContextAddLineToPoint(line, total, total / 2);
-
+  
   CGContextStrokePath(line);
   canvasView.image = UIGraphicsGetImageFromCurrentImageContext();
 }
@@ -178,7 +178,8 @@
   AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
   self.startScan = NO;
   self.distUrl = result.text;
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:formatString message:result.text delegate:self cancelButtonTitle:@"continue" otherButtonTitles:@"ok", nil];
+  self.distUrl = [self.distUrl stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:formatString message: self.distUrl delegate:self cancelButtonTitle:@"continue" otherButtonTitles:@"ok", nil];
   [alert show];
 }
 
