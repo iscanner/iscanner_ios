@@ -1,1 +1,0 @@
-PODS_ZXINGOBJC_OTHER_LDFLAGS = -ObjC -framework "AVFoundation" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "ImageIO" -framework "QuartzCore"

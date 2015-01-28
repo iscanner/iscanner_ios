@@ -34,7 +34,7 @@
 		639635971A60FB6E00039573 /* SwipeableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeableCell.h; sourceTree = "<group>"; };
 		639635981A60FB6E00039573 /* SwipeableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeableCell.m; sourceTree = "<group>"; tabWidth = 2; };
 		6396359C1A6121D400039573 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		639EA1D71A425A4C001069FC /* iScanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iScanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		639EA1D71A425A4C001069FC /* iscanner_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iscanner_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		639EA1DB1A425A4C001069FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		639EA1DC1A425A4C001069FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		639EA1DE1A425A4C001069FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		639EA1D81A425A4C001069FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				639EA1D71A425A4C001069FC /* iScanner.app */,
+				639EA1D71A425A4C001069FC /* iscanner_ios.app */,
 				639EA1F01A425A4C001069FC /* iscanner_iosTests.xctest */,
 			);
 			name = Products;
@@ -176,7 +176,7 @@
 			);
 			name = iscanner_ios;
 			productName = iscanner_ios;
-			productReference = 639EA1D71A425A4C001069FC /* iScanner.app */;
+			productReference = 639EA1D71A425A4C001069FC /* iscanner_ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 		639EA1EF1A425A4C001069FC /* iscanner_iosTests */ = {
@@ -208,7 +208,7 @@
 				TargetAttributes = {
 					639EA1D61A425A4C001069FC = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = BCFUQV9MPB;
+						DevelopmentTeam = D8A9Y93768;
 					};
 					639EA1EF1A425A4C001069FC = {
 						CreatedOnToolsVersion = 6.1;
@@ -416,7 +416,7 @@
 				INFOPLIST_FILE = iscanner_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = iScanner;
+				PRODUCT_NAME = iscanner_ios;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -430,7 +430,7 @@
 				INFOPLIST_FILE = iscanner_ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = iScanner;
+				PRODUCT_NAME = iscanner_ios;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

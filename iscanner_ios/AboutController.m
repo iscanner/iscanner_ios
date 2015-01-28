@@ -40,6 +40,7 @@
   self.versionView.font = [UIFont systemFontOfSize: 20.0];
   self.versionView.textAlignment = NSTextAlignmentCenter;
   self.versionView.textColor = [UIColor grayColor];
+  self.versionView.editable = NO;
   [self.view addSubview: self.versionView];
   self.updateView = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - updateViewHeight, self.view.frame.size.width, updateViewHeight)];
   self.updateView.backgroundColor = [UIColor clearColor];
