@@ -88,7 +88,7 @@
 }
 
 - (void)setNavigationBar {
-  self.navigationItem.title = @"iScanner";
+  self.navigationItem.title = @"EasyScanner";
   UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"History" style:UIBarButtonItemStylePlain target:self action:@selector(gotoHistory)];
   self.navigationItem.rightBarButtonItems=@[rightButton];
 }
