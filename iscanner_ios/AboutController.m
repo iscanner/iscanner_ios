@@ -36,7 +36,7 @@
   [self.view addSubview: self.iconIimageView];
   self.versionView = [[UITextView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - updateViewHeight - 20, self.view.frame.size.width, 100)];
   self.versionView.backgroundColor = [UIColor clearColor];
-  self.versionView.text = [NSString stringWithFormat:@"%@%@",@"iScanner v", self.versionString];
+  self.versionView.text = [NSString stringWithFormat:@"%@%@",@"EasyScanner v", self.versionString];
   self.versionView.font = [UIFont systemFontOfSize: 20.0];
   self.versionView.textAlignment = NSTextAlignmentCenter;
   self.versionView.textColor = [UIColor grayColor];
@@ -58,12 +58,12 @@
   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:response options:NSJSONReadingMutableLeaves error:&error];
   NSDictionary *djson = [json objectForKey:@"ios"];
   NSString *latestVersion = [djson objectForKey: @"version"];
-  NSString *latestVersionStr = [@"update iscanner to version " stringByAppendingString: latestVersion];
+  NSString *latestVersionStr = [@"update EasyScanner to version " stringByAppendingString: latestVersion];
   if ([latestVersion compare:self.versionString options:NSNumericSearch] == NSOrderedDescending) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message: latestVersionStr delegate:self cancelButtonTitle:@"next time" otherButtonTitles:@"update", nil];
     [alert show];
   } else {
-    [self.view makeToast: @"iscanner is up to date"
+    [self.view makeToast: @"EasyScanner is up to date"
                 duration: 1.0
                 position: CSToastPositionCenter];
   }
