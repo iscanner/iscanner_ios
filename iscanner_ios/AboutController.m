@@ -16,6 +16,7 @@
 @property (strong) UITextView *versionView;
 @property (strong) UIButton *updateView;
 @property (strong, nonatomic) NSString *API;
+@property (assign, nonatomic) NSTimer *checkTimer;
 @end
 
 @implementation AboutController
@@ -42,6 +43,11 @@
   self.versionView.textColor = [UIColor grayColor];
   self.versionView.editable = NO;
   [self.view addSubview: self.versionView];
+  self.checkTimer = [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(checkForUpdate) userInfo:nil repeats:NO];
+}
+
+- (void)initUpdateButton {
+  NSInteger updateViewHeight = 50;
   self.updateView = [[UIButton alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - updateViewHeight, self.view.frame.size.width, updateViewHeight)];
   self.updateView.backgroundColor = [UIColor clearColor];
   [self.updateView setTitleColor:[UIColor lightGrayColor]forState:UIControlStateNormal];
@@ -59,13 +65,16 @@
   NSDictionary *djson = [json objectForKey:@"ios"];
   NSString *latestVersion = [djson objectForKey: @"version"];
   NSString *latestVersionStr = [@"update EasyScanner to version " stringByAppendingString: latestVersion];
+  
   if ([latestVersion compare:self.versionString options:NSNumericSearch] == NSOrderedDescending) {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message: latestVersionStr delegate:self cancelButtonTitle:@"next time" otherButtonTitles:@"update", nil];
     [alert show];
   } else {
-    [self.view makeToast: @"EasyScanner is up to date"
+    /*
+     [self.view makeToast: @"EasyScanner is up to date"
                 duration: 1.0
                 position: CSToastPositionCenter];
+     */
   }
 }
 
