@@ -8,7 +8,6 @@
 
 #import "AboutController.h"
 #import "ViewController.h"
-#import "UIView+Toast.h"
 
 @interface AboutController ()
 @property (strong) NSString *versionString;
