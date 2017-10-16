@@ -8,7 +8,7 @@
 
 #import "HistoryController.h"
 #import "SwipeableCell.h"
-#import "UIView+Toast.h"
+#import <Toast/Toast.h>
 
 @interface HistoryController () <SwipeableCellDelegate, SwipeableCellDataSource, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *list;
@@ -157,8 +157,8 @@ static NSString * const cellIdentifier = @"swipetablecell";
 
 - (void)copyToClipboard:(NSString*)string {
   [self.tableView.superview makeToast: @"Copy to clipboard"
-              duration: 1.0
-              position: CSToastPositionCenter];
+                             duration: 1.0
+                             position: CSToastPositionCenter];
   UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
   pasteboard.string = string;
 }
