@@ -1,13 +1,17 @@
-iScanner
-========
+# iScanner
+
+---
 
 An easy-to-use scanner app for iOS.
 
+[![Build Status](https://img.shields.io/travis/iscanner/iscanner_ios.svg?style=flat-square)](https://travis-ci.org/iscanner/iscanner_ios)
+
 ## Installation
 
-Installation instructions are [on the homepage](http://iscanner.github.io/).
+Installation instructions are [on the homepage](//iscanner.github.io).
 
 ## Features
+
 - fast simple and exact
 - support multiple 2D codes
 - easily receive codes with a alert, including the result string
@@ -26,8 +30,8 @@ Installation instructions are [on the homepage](http://iscanner.github.io/).
 
 Thanks to:
 
-- [ZXingObjC](https://github.com/TheLevelUp/ZXingObjC)
-- [iscanner_android](https://github.com/iscanner/iscanner_android)
+- [ZXingObjC](//github.com/TheLevelUp/ZXingObjC)
+- [iscanner_android](//github.com/iscanner/iscanner_android)
 
 ## License
 
