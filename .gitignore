@@ -31,3 +31,4 @@ Cartfile.resolved
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+node_modules

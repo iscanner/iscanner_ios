@@ -1,0 +1,20 @@
+{
+  "name": "iscanner_ios",
+  "version": "1.0.0",
+  "description": "iscanner iOS",
+  "keywords": [
+    "iOS",
+    "scanner"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/iscanner/iscanner_ios.git"
+  },
+  "scripts": {
+    "contributor": "git-contributor"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "git-contributor": "^1.0.8"
+  }
+}
